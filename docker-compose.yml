@@ -1,0 +1,22 @@
+version: '3.7'
+
+services:
+  app:
+    build: ./app
+    container_name: application
+    ports:
+      - 1234:80
+    links:
+      - db
+    restart: always
+
+
+
+  db:
+    build: ./db
+    container_name: database
+    restart: always
+    volumes: 
+      - ./db/data:/var/lib/mysql
+    environment:
+      MARIADB_ROOT_PASSWORD: password
