@@ -5,7 +5,7 @@ services:
     build: ./app
     container_name: application
     ports:
-      - 1234:80
+      - 80:80
     links:
       - db
     restart: always
