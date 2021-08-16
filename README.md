@@ -14,7 +14,7 @@ sudo docker-compose build
 
 2) Run containers
 ```bash
-sudo docker-compose up
+sudo docker-compose up -d
 ```
 
 3) Create database and user
