@@ -15,6 +15,7 @@ pipeline
         {
             steps 
             {
+                sh 'sudo docker stop application && sudo docker stop database && sudo docker rm application && sudo docker rm database'
                 sh 'sudo docker-compose build'
             }
         }
