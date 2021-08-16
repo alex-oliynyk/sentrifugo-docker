@@ -30,8 +30,8 @@ pipeline
         {
             steps 
             {
-                sh 'sleep 60'
-                sh 'sudo docker exec database  /usr/bin/mysql -u root --password=password < db/dump.txt'
+                sh 'sleep 20'
+                sh 'sudo docker exec -i database  /usr/bin/mysql -u root --password=password < db/dump.txt'
             }
         }
     }
