@@ -9,7 +9,7 @@ To install Sentrifugo you need Docker and Docker-compose.
 1) Build images
 
 ```bash
-sudo docker-compose buid
+sudo docker-compose build
 ```
 
 2) Run containers
