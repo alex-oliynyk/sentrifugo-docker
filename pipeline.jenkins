@@ -23,7 +23,6 @@ pipeline
         {
             steps 
             {
-
                 sh 'sudo docker-compose up -d'
             }
         }
@@ -31,7 +30,7 @@ pipeline
         {
             steps 
             {
-
+                sh 'sudo docker exec database service mariadb start'
                 sh 'sudo docker exec database  /usr/bin/mysql -u root --password=password < db/dump.txt'
             }
         }

@@ -19,7 +19,8 @@ sudo docker-compose up -d
 
 3) Create database and user
 ```bash
-sudo docker exec database  /usr/bin/mysql -u root --password=password < db/dump.txt
+sudo docker exec database service mariadb start
+sudo docker exec database /usr/bin/mysql -u root --password=password < db/dump.txt
 ```
 
 4) After installation you need to run the following command
