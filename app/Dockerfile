@@ -1,7 +1,7 @@
 FROM ubuntu/apache2
 
 RUN apt-get -y update && \
-	apt-get -y install software-properties-common && \
+	apt-get -y install software-properties-common wget && \
 	add-apt-repository -y ppa:ondrej/php && \
 	apt-get install -y \
 		php7.2 \
@@ -17,7 +17,9 @@ RUN apt-get -y update && \
 		php7.2-cli \
 		php7.2-ldap \
 		php7.2-zip \
-		php7.2-curl
+		php7.2-curl && \
+	wget -O phpunit https://phar.phpunit.de/phpunit-8.phar && \
+	chmod +x phpunit
 
 COPY sentrifugo.conf /etc/apache2/sites-available/sentrifugo.conf
 COPY --chown=www-data:www-data sentrifugo /var/www/html/
