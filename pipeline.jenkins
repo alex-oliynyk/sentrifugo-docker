@@ -20,20 +20,14 @@ pipeline
                     sudo docker rm application && \
                     sudo docker rm database'
                 sh 'sudo docker-compose build'
+                sh 'sudo docker-compose up -d'
             }
         }
         stage("Test") 
         {
             steps 
             {
-                sh './phpunit --bootstrap /var/www/html/install/step1.php /var/www/html/test.php'
-            }
-        }
-        stage("Start") 
-        {
-            steps 
-            {
-                sh 'sudo docker-compose up -d'
+                sh 'sudo docker exec -i application ./phpunit --bootstrap /var/www/html/install/step1.php /var/www/html/test.php'
             }
         }
         stage("Create DB") 
