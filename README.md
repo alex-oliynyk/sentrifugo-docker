@@ -27,3 +27,4 @@ sudo docker exec -i database /usr/bin/mysql -u root --password=password < db/dum
 ```bash
 sudo docker exec -i application rm -r /var/www/html/install
 ```
+Hello World
