@@ -16,7 +16,7 @@ services:
     build: ./db
     container_name: database
     restart: always
-#    volumes: 
-#      - ./db/data:/var/lib/mysql
+    volumes: 
+      - ./db/data:/var/lib/mysql
     environment:
       MARIADB_ROOT_PASSWORD: password
