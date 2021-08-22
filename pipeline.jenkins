@@ -31,7 +31,7 @@ pipeline
         {
             steps 
             {
-                sh 'sudo docker exec -i application ./phpunit --bootstrap /var/www/html/install/step1.php /var/www/html/test.php'
+                sh 'sudo docker exec -i application ./phpunit --bootstrap /var/www/html/instal/step1.php /var/www/html/test.php'
             }
         }
         stage("Create DB") 
