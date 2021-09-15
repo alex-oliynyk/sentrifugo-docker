@@ -19,7 +19,7 @@ sudo docker-compose up -d
 
 3) Create database and user
 ```bash
-sudo docker exec -i database /usr/bin/mysql -u root --password=password < db/dump.txt
+sudo docker exec -i database /usr/bin/mysql -u root --password=password < db/database.sql
 ```
 
 4) After installation you need to run the following command
